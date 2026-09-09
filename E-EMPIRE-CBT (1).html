@@ -1,0 +1,1086 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>E EMPIRE | Where Creativity Meets Tech</title>
+
+    <style>
+
+        /* =========================
+           GENERAL
+        ========================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            color: #101820;
+            background: white;
+            line-height: 1.7;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+
+        /* =========================
+           HEADER
+        ========================= */
+
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+
+            width: 100%;
+            height: 78px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            padding: 0 22px;
+
+            background: #082746;
+
+            z-index: 1000;
+
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+        }
+
+
+        /* LOGO */
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+
+            color: white;
+        }
+
+        .logo-mark {
+            width: 42px;
+            height: 42px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border: 2px solid white;
+            border-radius: 8px;
+
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .logo-text strong {
+            font-size: 20px;
+            letter-spacing: 2px;
+        }
+
+        .logo-text span {
+            font-size: 8px;
+            color: #b8d9ff;
+        }
+
+
+        /* =========================
+           MENU BUTTON
+        ========================= */
+
+        .menu-btn {
+            width: 44px;
+            height: 44px;
+
+            border: none;
+            background: transparent;
+
+            display: flex;
+            flex-direction: column;
+
+            justify-content: center;
+            align-items: center;
+
+            gap: 5px;
+
+            cursor: pointer;
+        }
+
+        .menu-btn span {
+            width: 28px;
+            height: 3px;
+
+            background: white;
+
+            border-radius: 5px;
+        }
+
+
+        /* =========================
+           NAVIGATION
+        ========================= */
+
+        .nav {
+            position: absolute;
+
+            top: 78px;
+            right: 0;
+
+            width: 100%;
+
+            background: #082746;
+
+            display: none;
+            flex-direction: column;
+
+            padding: 15px 22px;
+        }
+
+        .nav.active {
+            display: flex;
+        }
+
+        .nav a {
+            color: white;
+
+            padding: 15px 5px;
+
+            font-size: 17px;
+
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .nav a:hover {
+            color: #63b3ff;
+        }
+
+
+        /* =========================
+           HERO
+        ========================= */
+
+        .hero {
+            min-height: 50vh;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            text-align: center;
+
+            padding: 130px 25px 80px;
+
+            background:
+                linear-gradient(
+                    rgba(8,39,70,0.96),
+                    rgba(8,39,70,0.96)
+                );
+        }
+
+        .hero-content {
+            max-width: 700px;
+        }
+
+        .small-title {
+            color: #7fc4ff;
+
+            font-size: 14px;
+
+            font-weight: bold;
+
+            letter-spacing: 3px;
+
+            margin-bottom: 12px;
+        }
+
+        .hero h1 {
+            color: blue ;
+
+            font-size: 52px;
+
+            line-height: 1.1;
+
+            letter-spacing: 2px;
+
+            margin-bottom: 10px;
+        }
+
+        .hero h2 {
+            color: #9bcfff;
+
+            font-size: 23px;
+
+            font-style: italic;
+
+            margin-bottom: 25px;
+        }
+
+        .hero-text {
+            color: #f0f5fa;
+
+            font-size: 17px;
+
+            margin-bottom: 35px;
+        }
+
+
+        /* =========================
+           BUTTON
+        ========================= */
+
+        .btn {
+            display: line -block;
+
+            padding: 15px 30px;
+
+            background: #168bea;
+
+            color: white;
+
+            border-radius: 30px;
+
+            font-weight: bold;
+
+            font-size: 16px;
+
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+
+            background: #0875c9;
+        }
+
+
+        /* =========================
+           SECTIONS
+        ========================= */
+
+        .section {
+            padding: 80px 25px;
+
+            max-width: 1000px;
+
+            margin: auto;
+        }
+
+        .section-label {
+            font-size: 13px;
+
+            font-weight: bold;
+
+            letter-spacing: 3px;
+
+            color: #168bea;
+
+            margin-bottom: 10px;
+        }
+
+        .section h2 {
+            font-size: 38px;
+
+            line-height: 1.2;
+
+            margin-bottom: 12px;
+        }
+
+        .section p {
+            font-size: 17px;
+
+            margin-bottom: 20px;
+        }
+
+        .line {
+            width: 100px;
+
+            height: 3px;
+
+            background: #168bea;
+
+            margin-bottom: 30px;
+        }
+
+
+        /* =========================
+           DARK SECTION
+        ========================= */
+
+        .dark-section {
+            max-width: none;
+
+            background: #082746;
+
+            color: white;
+
+            padding-left: 25px;
+            padding-right: 25px;
+        }
+
+        .dark-section > * {
+            max-width: 950px;
+
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .dark-section .section-label {
+            color: #7fc4ff;
+        }
+
+        .dark-section .line {
+            background: #7fc4ff;
+        }
+
+
+        /* =========================
+           VALUES
+        ========================= */
+
+        .values {
+            display: grid;
+
+            grid-template-columns: 1fr;
+
+            gap: 18px;
+        }
+
+        .value-card {
+            padding: 25px;
+
+            background: #f2f6fa;
+
+            border-radius: 12px;
+
+            border-left: 4px solid #168bea;
+        }
+
+        .value-number {
+            color: #168bea;
+
+            font-weight: bold;
+
+            font-size: 14px;
+
+            margin-bottom: 8px;
+        }
+
+        .value-card h3 {
+            font-size: 21px;
+
+            margin-bottom: 8px;
+        }
+
+        .value-card p {
+            font-size: 15px;
+        }
+
+
+        /* =========================
+           WHY E EMPIRE
+        ========================= */
+
+        .why-list {
+            margin-top: 30px;
+        }
+
+        .why-list div {
+            display: flex;
+
+            align-items: center;
+
+            gap: 12px;
+
+            margin-bottom: 15px;
+
+            font-size: 16px;
+        }
+
+        .why-list span {
+            width: 28px;
+            height: 28px;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            background: #168bea;
+
+            border-radius: 50%;
+
+            font-weight: bold;
+        }
+
+
+        /* =========================
+           COURSES
+        ========================= */
+
+        .courses {
+            display: grid;
+
+            grid-template-columns: 1fr;
+
+            gap: 18px;
+
+            margin-top: 35px;
+        }
+
+        .course-card {
+            padding: 25px;
+
+            border: 1px solid #e1e7ed;
+
+            border-radius: 12px;
+
+            background: white;
+
+            transition: 0.3s;
+        }
+
+        .course-card:hover {
+            transform: translateY(-5px);
+
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+        }
+
+        .course-card span {
+            color: #168bea;
+
+            font-size: 13px;
+
+            font-weight: bold;
+        }
+
+        .course-card h3 {
+            font-size: 21px;
+
+            margin: 8px 0;
+        }
+
+        .course-card p {
+            font-size: 15px;
+        }
+
+
+        /* =========================
+           CONTACT
+        ========================= */
+
+        .contact-section {
+            background: #f4f8fb;
+
+            max-width: none;
+        }
+
+        .contact-section > * {
+            max-width: 950px;
+
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .contact-info {
+            margin: 35px auto;
+
+            max-width: 950px;
+        }
+
+        .contact-item {
+            margin-bottom: 25px;
+        }
+
+        .contact-item strong {
+            display: block;
+
+            color: #082746;
+
+            font-size: 18px;
+
+            margin-bottom: 5px;
+        }
+
+        .contact-item p {
+            margin: 0;
+        }
+
+        .contact-item a {
+            color: #168bea;
+
+            font-weight: bold;
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            background: #061d35;
+
+            color: black
+
+            text-align: center;
+
+            padding: 45px 20px;
+        }
+
+        .footer-logo {
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            gap: 10px;
+
+            margin-bottom: 15px;
+        }
+
+        .footer-logo .logo-mark {
+            width: 36px;
+            height: 36px;
+
+            font-size: 18px;
+        }
+
+        footer p {
+            color: #b8c9d9;
+
+            margin-bottom: 12px;
+        }
+
+        .copyright {
+            font-size: 13px;
+        }
+
+
+        /* =========================
+           DESKTOP
+        ========================= */
+
+        @media (min-width: 700px) {
+
+            .header {
+                padding: 0 50px;
+            }
+
+            .menu-btn {
+                display: none;
+            }
+
+            .nav {
+                position: static;
+
+                width: auto;
+
+                display: flex;
+
+                flex-direction: row;
+
+                padding: 0;
+
+                gap: 30px;
+
+                background: transparent;
+            }
+
+            .nav a {
+                border: none;
+
+                padding: 5px;
+
+                font-size: 15px;
+            }
+
+            .hero h1 {
+                font-size: 75px;
+            }
+
+            .hero h2 {
+                font-size: 28px;
+            }
+
+            .section {
+                padding: 100px 50px;
+            }
+
+            .values {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .courses {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+    <!-- =========================
+         HEADER
+    ========================== -->
+
+    <header class="header">
+
+        <a href="#home" class="logo">
+
+            <div class="logo-mark">
+                E
+            </div>
+
+            <div class="logo-text">
+
+                <strong>E EMPIRE</strong>
+
+                <span>
+                    WHERE CREATIVITY MEETS TECH
+                </span>
+
+            </div>
+
+        </a>
+
+
+        <!-- MENU BUTTON -->
+
+        <button class="menu-btn" id="menuBtn">
+
+            <span></span>
+            <span></span>
+            <span></span>
+
+        </button>
+
+
+        <!-- NAVIGATION -->
+
+        <nav class="nav" id="nav">
+
+            <a href="#home">
+                Home
+            </a>
+
+            <a href="#courses">
+                Courses
+            </a>
+
+            <a href="#contact">
+                Contact
+            </a>
+
+        </nav>
+
+    </header>
+
+
+    <!-- =========================
+         HOME
+    ========================== -->
+
+    <main>
+
+        <section class="hero" id="home">
+
+            <div class="hero-content">
+
+                <p class="small-title">
+                    WELCOME TO
+                </p>
+
+                <h1>
+                    E EMPIRE
+                </h1>
+
+                <h2>
+                    Where Creativity Meets Tech.
+                </h2>
+
+                <p class="hero-text">
+                    A growing creative and technology organization
+                    focused on education, innovation, digital skills
+                    and building solutions for the future.
+                </p>
+
+                <a href="#about" class="btn">
+                    Discover E EMPIRE
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- ABOUT US -->
+
+        <section class="section" id="about">
+
+            <p class="section-label">
+                
+            </p>
+
+            <h2>
+                ABOUT US 
+            </h2>
+            <p>
+                E EMPIRE is a growing organization focused on
+                creativity, technology, education and innovation.
+                We are committed to helping people discover their
+                potential, develop valuable digital skills and
+                create solutions that can make a difference.
+            </p>
+
+            <p>
+                Through training, creative services, technology
+                projects and community initiatives, E EMPIRE aims
+                to build a community of learners, creators,
+                innovators and problem-solvers.
+            </p>
+
+        </section>
+
+
+        <!-- MISSION -->
+
+        <section class="section white-section">
+
+            <p class="section-label">
+            
+            </p>
+
+            <h2>
+                OUR MISSION 
+            </h2>
+
+            <p>
+                To empower individuals, especially young people,
+                with creativity, digital knowledge and practical
+                technology skills while building useful solutions
+                that contribute to our communities.
+            </p>
+
+        </section>
+
+
+        <!-- VISION -->
+
+        <section class="section">
+
+            <p class="section-label">
+            
+            </p>
+
+            <h2>
+                OUR VISION 
+            </h2>
+           < div class="vision-car
+            
+            <p>
+                To grow E EMPIRE into a recognized creative and
+                technology organization that educates, builds,
+                innovates and creates positive impact through
+                technology.
+            </p>
+
+        </section>
+
+        <!-- CORE VALUES -->
+
+        <section class="section">
+
+            <p class="section-label">
+                
+            </p>
+
+            <h2>
+                CORE VALUES 
+            </h2>
+
+            <div class="values">
+
+                <div class="value-card">
+
+                    <div class="value-number">
+                        01
+                    </div>
+
+                    <h3>
+                        Creativity
+                    </h3>
+
+                    <p>
+                        We encourage new ideas and creative
+                        ways of solving problems.
+                    </p>
+
+                </div>
+
+
+                <div class="value-card">
+
+                    <div class="value-number">
+                        02
+                    </div>
+
+                    <h3>
+                        Innovation
+                    </h3>
+
+                    <p>
+                        We believe in building better solutions
+                        for tomorrow.
+                    </p>
+
+                </div>
+
+
+                <div class="value-card">
+
+                    <div class="value-number">
+                        03
+                    </div>
+
+                    <h3>
+                        Learning
+                    </h3>
+
+                    <p>
+                        We continuously learn, improve and
+                        share knowledge with others.
+                    </p>
+
+                </div>
+
+
+                <div class="value-card">
+
+                    <div class="value-number">
+                        04
+                    </div>
+
+                    <h3>
+                        Impact
+                    </h3>
+
+                    <p>
+                        We want our work to create meaningful
+                        value for people and communities.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- WHY E EMPIRE -->
+
+        <section class="section dark-section">
+
+            <p class="section-label">
+                WHY US?
+            </p>
+
+            <h2>
+                Why E EMPIRE?
+            </h2>
+
+            <div class="line"></div>
+
+            <p>
+                E EMPIRE brings creativity and technology together
+                to create opportunities for learning, development
+                and innovation.
+            </p>
+
+
+            <div class="why-list">
+
+                <div>
+                    <span>✓</span>
+                    Practical digital skills
+                </div>
+
+                <div>
+                    <span>✓</span>
+                    Creative and technology development
+                </div>
+
+                <div>
+                    <span>✓</span>
+                    Learning and mentorship
+                </div>
+
+                <div>
+                    <span>✓</span>
+                    Technology projects and innovation
+                </div>
+
+                <div>
+                    <span>✓</span>
+                    Community-focused initiatives
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- COURSES -->
+
+        <section class="section" id="courses">
+
+            <p class="section-label">
+                E EMPIRE ACADEMY
+            </p>
+
+            <h2>
+                Our Courses
+            </h2>
+
+            <div class="line"></div>
+
+            <p>
+                Learn practical digital skills that can help you
+                create, build and work in today's digital world.
+            </p>
+
+
+            <div class="courses">
+
+                <div class="course-card">
+
+                    <span>01</span>
+
+                    <h3>
+                        Graphic Design
+                    </h3>
+
+                    <p>
+                        Learn how to create professional visual
+                        designs and digital graphics.
+                    </p>
+
+                </div>
+
+
+                <div class="course-card">
+
+                    <span>02</span>
+
+                    <h3>
+                        Web Development
+                    </h3>
+
+                    <p>
+                        Learn how websites are designed and built
+                        using modern web technologies.
+                    </p>
+
+                </div>
+
+
+                <div class="course-card">
+
+                    <span>03</span>
+
+                    <h3>
+                        UI/UX Design
+                    </h3>
+
+                    <p>
+                        Learn how to design useful and engaging
+                        digital experiences.
+                    </p>
+
+                </div>
+
+
+                <div class="course-card">
+
+                    <span>04</span>
+
+                    <h3>
+                        Video Editing
+                    </h3>
+
+                    <p>
+                        Develop practical skills for creating and
+                        editing digital videos.
+                    </p>
+
+                </div>
+
+
+                <div class="course-card">
+
+                    <span>05</
+                    <!-- CONTACT -->
+
+<section class="section contact-section" id="contact">
+
+    <p class="section-label">
+        GET IN TOUCH
+    </p>
+
+    <h2>
+        Contact Us
+    </h2>
+
+    <div class="line"></div>
+
+    <div class="contact-info">
+
+        <div class="contact-item">
+
+            <strong>
+                Location
+            </strong>
+
+            <p>
+                University of Africa Toru-Orua (UAT),
+                Bayelsa State, Sagbama.
+            </p>
+
+        </div>
+
+
+        <div class="contact-item">
+
+            <strong>
+                Phone
+            </strong>
+
+            <p>
+                <a href="tel:07086121712">
+                    07086121712
+                </a>
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
